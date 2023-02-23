@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flake8-github-annotations"
+description = 'A flake8 formatter that turns output into Github Annotations'
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Gustav Gränsbo", email = "gustav.gransbo@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+dependencies = []
+dynamic = ["version"]
+
+[project.urls]
+Documentation = "https://github.com/gustavgransbo/flake8-github-annotations#readme"
+Issues = "https://github.com/gustavgransbo/flake8-github-annotations/issues"
+Source = "https://github.com/gustavgransbo/flake8-github-annotations"
+
+[tool.hatch.version]
+path = "src/flake8_github_annotations/__about__.py"
