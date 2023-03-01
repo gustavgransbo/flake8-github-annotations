@@ -21,8 +21,14 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
 ]
-dependencies = []
+dependencies = [
+  "flake8 >= 3.0.0"
+]
 dynamic = ["version"]
+
+[project.entry-points]
+"flake8.report" = { github-annotations = "flake8_github_annotations:GithubAnnotationsFormatter" }
+
 
 [project.urls]
 Documentation = "https://github.com/gustavgransbo/flake8-github-annotations#readme"
