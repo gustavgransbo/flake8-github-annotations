@@ -77,6 +77,18 @@ fmt = [
   "check"
 ]
 
+[tool.hatch.envs.dev]
+# Environment with all dev dependencies, to be used by IDE.
+dependencies = [
+  "flake8",
+  "black",
+  "isort",
+  "flake8-black",
+  "flake8-isort",
+  "flake8-bugbear",
+  "mypy",
+]
+
 [tool.isort]
 profile = "black"
 
