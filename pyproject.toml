@@ -37,3 +37,10 @@ Source = "https://github.com/gustavgransbo/flake8-github-annotations"
 
 [tool.hatch.version]
 path = "src/flake8_github_annotations/__about__.py"
+
+[tool.isort]
+profile = "black"
+
+[[tool.mypy.overrides]]
+module = "flake8.*"
+ignore_missing_imports = true
