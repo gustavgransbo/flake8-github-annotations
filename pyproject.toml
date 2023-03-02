@@ -38,6 +38,45 @@ Source = "https://github.com/gustavgransbo/flake8-github-annotations"
 [tool.hatch.version]
 path = "src/flake8_github_annotations/__about__.py"
 
+
+[tool.hatch.envs.test]
+# Environment used to run tests
+dependencies = [
+  "pytest",
+]
+
+[tool.hatch.envs.test.scripts]
+test = 'pytest'
+
+[tool.hatch.envs.types]
+# Environment used to type check
+dependencies = [
+  "mypy",
+]
+
+[tool.hatch.envs.types.scripts]
+check = 'mypy .'
+
+[tool.hatch.envs.style]
+# Environment used to lint and enforce code style
+dependencies = [
+  "flake8",
+  "black",
+  "isort",
+  "flake8-black",
+  "flake8-isort",
+  "flake8-bugbear",
+]
+detached = true
+
+[tool.hatch.envs.style.scripts]
+check = 'flake8'
+fmt = [
+  "black .",
+  "isort .",
+  "check"
+]
+
 [tool.isort]
 profile = "black"
 
