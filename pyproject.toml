@@ -87,6 +87,7 @@ dependencies = [
   "flake8-isort",
   "flake8-bugbear",
   "mypy",
+  "pytest",
 ]
 
 [tool.isort]
