@@ -38,6 +38,12 @@ Source = "https://github.com/gustavgransbo/flake8-github-annotations"
 [tool.hatch.version]
 path = "src/flake8_github_annotations/__about__.py"
 
+[tool.hatch.scripts]
+check = [
+  "hatch run test:test",
+  "hatch run types:check",
+  "hatch run style:check",
+]
 
 [tool.hatch.envs.test]
 # Environment used to run tests
