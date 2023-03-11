@@ -1,12 +1,13 @@
 import subprocess
 import sys
 import tempfile
+from typing import Generator
 
 import pytest
 
 
 @pytest.fixture
-def file_with_error() -> str:
+def file_with_error() -> Generator[str, None, None]:
     """Yields a path to a temprary file that contains a F401 error"""
     with tempfile.NamedTemporaryFile("w+") as f:
         f.write("import foo\n")
