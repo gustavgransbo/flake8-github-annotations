@@ -34,7 +34,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: Type
+          - name: Types
             environment: 'types'
           - name: Style
             environment: 'ci-style'
