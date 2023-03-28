@@ -66,9 +66,10 @@ python = [
 
 [tool.hatch.envs.types]
 # Environment used to type check
-template = "test"
-extra_dependencies = [
+dependencies = [
   "mypy",
+  "pytest",
+  "importlib_metadata; python_version < '3.10'",
 ]
 
 [tool.hatch.envs.types.scripts]

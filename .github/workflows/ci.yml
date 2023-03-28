@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test (${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - python-version: '3.7'
+          - python-version: '3.8'
+          - python-version: '3.9'
+          - python-version: '3.10'
+          - python-version: '3.11'
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: python -m pip install --upgrade hatch
+    - name: Run Tests
+      run: hatch run +py=${{ matrix.python-version}} +type= test:test
+
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Types
+            environment: 'types'
+          - name: Style
+            environment: 'ci-style'
+    name: Check ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: python -m pip install --upgrade hatch
+    - name: Check ${{ matrix.name }}
+      run: hatch run ${{ matrix.environment }}:check
