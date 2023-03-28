@@ -84,7 +84,6 @@ dependencies = [
   "flake8-isort",
   "flake8-bugbear",
 ]
-detached = true
 
 [tool.hatch.envs.style.scripts]
 check = 'flake8'
@@ -93,6 +92,13 @@ fmt = [
   "isort .",
   "check"
 ]
+
+[tool.hatch.envs.ci-style]
+template = "style"
+
+[tool.hatch.envs.ci-style.scripts]
+check = 'flake8 --format github-annotations'
+
 
 [tool.hatch.envs.dev]
 # Environment with all dev dependencies, to be used by IDE.
