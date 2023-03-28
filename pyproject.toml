@@ -55,6 +55,15 @@ dependencies = [
 [tool.hatch.envs.test.scripts]
 test = 'pytest'
 
+[[tool.hatch.envs.test.matrix]]
+python = [
+  "3.7",
+  "3.8",
+  "3.9",
+  "3.10",
+  "3.11",
+]
+
 [tool.hatch.envs.types]
 # Environment used to type check
 template = "test"
