@@ -5,6 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "flake8-github-annotations"
 description = 'A flake8 formatter that turns output into Github Annotations'
+repository = "https://github.com/gustavgransbo/flake8-github-annotations"
 readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
