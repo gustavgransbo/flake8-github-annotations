@@ -6,7 +6,7 @@
 -----
 A formatter plugin for flake8 that turns flake8 errors into Github Anotations.
 
-![Example Annotations](/assets/example_annotation.png)
+![Example Annotations](https://raw.githubusercontent.com/gustavgransbo/flake8-github-annotations/main/assets/example_annotation.png)
 
 **Table of Contents**
 
