@@ -26,7 +26,7 @@ To enable the formatter,
 and turn flake8 output into Github Annotations,
 provide the `--format` argument when invoking `flake8`.
 ```console
-flake8 --format github-annotations
+flake8 --format github
 ```
 
 This turns flake8 output into lines like this:
@@ -58,7 +58,7 @@ jobs:
       - name: Install dependencies
         run: pip install flake8 flake8-github-annotations
       - name: Lint with flake8
-        run: flake8 --format github-annotations
+        run: flake8 --format github
 ```
 
 ## Alternative project

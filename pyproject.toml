@@ -28,7 +28,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.entry-points]
-"flake8.report" = { github-annotations = "flake8_github_annotations:GithubAnnotationsFormatter" }
+"flake8.report" = { github = "flake8_github_annotations:GithubAnnotationsFormatter" }
 
 
 [project.urls]
@@ -99,7 +99,7 @@ fmt = [
 template = "style"
 
 [tool.hatch.envs.ci-style.scripts]
-check = 'flake8 --format github-annotations'
+check = 'flake8 --format github'
 
 
 [tool.hatch.envs.dev]
