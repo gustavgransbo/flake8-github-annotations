@@ -12,6 +12,7 @@ A formatter plugin for flake8 that turns flake8 errors into Github Anotations.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Alternative project](#alternative-project)
 - [License](#license)
 
 ## Installation
@@ -59,6 +60,20 @@ jobs:
       - name: Lint with flake8
         run: flake8 --format github-annotations
 ```
+
+## Alternative project
+Using this project to format flake8 output makes the output hard to read for a human,
+and you will probably need to call flake8 without the `--format` argument when linting
+locally.
+
+If you don't wish to add an extra argument to flake8 when running in CI,
+you can use the GithubAction
+[rbialon/flake8-annotations](https://github.com/rbialon/flake8-annotations),
+which uses regex to detect flake8 output.
+A drawback of this apporach is that the project currently (2023-03-29),
+only supports a predefined set of error code prefixes,
+and might not detect errors from your favourite flake8 plugin.
+
 ## License
 
 `flake8-github-annotations` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
