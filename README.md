@@ -2,6 +2,8 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/flake8-github-annotations.svg)](https://pypi.org/project/flake8-github-annotations)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/flake8-github-annotations.svg)](https://pypi.org/project/flake8-github-annotations)
+[![CI](https://github.com/gustavgransbo/flake8-github-annotations/actions/workflows/ci.yml/badge.svg)](https://github.com/gustavgransbo/flake8-github-annotations/actions/workflows/ci.yml)
+
 
 -----
 A formatter plugin for flake8 that turns flake8 errors into Github Anotations.
