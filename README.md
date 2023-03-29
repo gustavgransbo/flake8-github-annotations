@@ -45,7 +45,7 @@ name: Lint
 on: [push]
 
 jobs:
-  build:
+  lint:
 
     runs-on: ubuntu-latest
 
