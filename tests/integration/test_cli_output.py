@@ -23,7 +23,7 @@ def test_output_is_formated_as_github_error_annotation(file_with_error: str):
             "flake8",
             file_with_error,
             "--format",
-            "github-annotations",
+            "github",
         ],
         capture_output=True,
     )
