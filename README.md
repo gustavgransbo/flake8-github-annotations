@@ -63,6 +63,27 @@ jobs:
         run: flake8 --format github
 ```
 
+### Running flake8 from a subdirectory
+If you run flake8 from a subdirectory,
+you need to provide the `--github-annotation-path-prefix` command line argument.
+The provided path will be prefixed to the filenames in flake8 output,
+so that GitHub correctly identifies the file locations.
+
+For example, if flake8 is invoked from the subdirectory `foo/bar` in the structure,
+below,
+you should invoke it like so:
+```console
+flake8 --format github --github-annotation-path-prefix foo/bar
+```
+```
+repository_root
+│
+└───foo
+    └───bar
+         └───app.py
+         └───tox.ini
+```
+
 ## Alternative project
 Using this project to format flake8 output makes the output hard to read for a human,
 and you will probably need to call flake8 without the `--format` argument when linting
