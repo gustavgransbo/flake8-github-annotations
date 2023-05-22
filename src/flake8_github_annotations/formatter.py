@@ -7,6 +7,8 @@ from flake8.violation import Violation
 
 
 class GithubAnnotationsFormatter(BaseFormatter):
+    name = "GithubAnnotationsFormatter"
+
     def format(self, error: Violation) -> Optional[str]:
         return (
             f"::error file={self.path_prefix / error.filename},line={error.line_number}"
