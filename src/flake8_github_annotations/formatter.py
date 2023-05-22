@@ -2,19 +2,19 @@ from pathlib import Path
 from typing import Optional
 
 from flake8.formatting.base import BaseFormatter
-from flake8.options.manager import OptionManager
-from flake8.violation import Violation
 
 
 class GithubAnnotationsFormatter(BaseFormatter):
-    def format(self, error: Violation) -> Optional[str]:
+    name = "GithubAnnotationsFormatter"
+
+    def format(self, error) -> Optional[str]:
         return (
             f"::error file={self.path_prefix / error.filename},line={error.line_number}"
             f",col={error.column_number},title={error.code}::{error.text}"
         )
 
     @classmethod
-    def add_options(cls, option_manager: OptionManager) -> None:
+    def add_options(cls, option_manager) -> None:
         option_manager.add_option(
             "--github-annotation-path-prefix",
             default="",
@@ -26,5 +26,5 @@ class GithubAnnotationsFormatter(BaseFormatter):
         )
 
     @classmethod
-    def parse_options(cls, option_manager: OptionManager) -> None:
+    def parse_options(cls, option_manager) -> None:
         cls.path_prefix = Path(option_manager.github_annotation_path_prefix)
