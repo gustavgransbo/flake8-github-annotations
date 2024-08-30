@@ -20,6 +20,7 @@ classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
   "flake8 >= 4.0.0"
@@ -75,6 +76,7 @@ python = [
   "3.9",
   "3.10",
   "3.11",
+  "3.12"
 ]
 flake8 = [
   "7.0.0",
